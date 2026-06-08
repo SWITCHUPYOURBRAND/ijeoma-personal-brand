@@ -19,22 +19,22 @@ export default function AdminLayout({
     checkUser();
   }, []);
 
-  async function checkUser() {
-    try {
-      const {
-        data: { user },
-      } = await supabase.auth.getUser();
+ async function checkUser() {
+  try {
+    const {
+      data: { session },
+    } = await supabase.auth.getSession();
 
-      if (!user) {
-        router.push("/admin/login");
-        return;
-      }
-
-      setLoading(false);
-    } catch (error) {
-      console.error(error);
+    if (!session) {
       router.push("/admin/login");
+      return;
     }
+
+    setLoading(false);
+  } catch (error) {
+    console.error(error);
+    router.push("/admin/login");
+  }
   }
 
   async function logout() {
