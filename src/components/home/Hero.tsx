@@ -40,10 +40,10 @@ export default function Hero() {
   }
 
   return (
-    <section className="bg-[#F7F1EA] min-h-screen flex items-center">
-      <div className="max-w-7xl mx-auto px-6 lg:px-10 py-24">
+    <section className="bg-[#F7F1EA] py-16 lg:min-h-screen flex items-center">
+     <div className="max-w-7xl mx-auto px-6 lg:px-10 py-10 lg:py-24">
 
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
+       <div className="grid lg:grid-cols-2 gap-10 lg:gap-20 items-center">
 
           {/* LEFT */}
 
@@ -54,7 +54,7 @@ export default function Hero() {
                 uppercase
                 tracking-[0.08em]
                 text-[#A37B55]
-                text-lg
+                text-base md:text-base md:text-lg
                 font-bold
                 mb-6
               "
@@ -66,8 +66,9 @@ export default function Hero() {
             <h1
               className="
                 hero-heading
-                text-5xl
-                md:text-6xl
+                text-4xl
+sm:text-5xl
+md:text-6xl
                 lg:text-[78px]
                 leading-[0.95]
                 tracking-[-0.04em]
@@ -81,11 +82,12 @@ export default function Hero() {
 
             <p
               className="
-                mt-8
-                text-xl
-                leading-9
-                text-[#666666]
-                max-w-xl
+              mt-6
+text-base
+md:text-xl
+leading-8
+text-[#666666]
+max-w-xl
               "
             >
               {profile.hero_description ||
@@ -105,7 +107,7 @@ export default function Hero() {
               </p>
             </div>
 
-            <div className="mt-10 flex flex-wrap gap-4">
+            <div className="mt-8 flex flex-col sm:flex-row gap-4">
 
               <button
                 className="
@@ -144,10 +146,10 @@ export default function Hero() {
 
             {/* STATS */}
 
-            <div className="mt-16 grid grid-cols-3 gap-8 max-w-2xl">
+            <div className="mt-12 grid grid-cols-3 gap-4 md:gap-8">
 
               <div>
-                <h3 className="text-4xl font-bold text-[#A37B55]">
+                <h3 className="text-3xl md:text-4xl font-bold text-[#A37B55]">
                   15+
                 </h3>
 
@@ -157,7 +159,7 @@ export default function Hero() {
               </div>
 
               <div>
-                <h3 className="text-4xl font-bold text-[#A37B55]">
+                <h3 className="text-3xl md:text-4xl font-bold text-[#A37B55]">
                   100+
                 </h3>
 
@@ -167,7 +169,7 @@ export default function Hero() {
               </div>
 
               <div>
-                <h3 className="text-4xl font-bold text-[#A37B55]">
+                <h3 className="text-3xl md:text-4xl font-bold text-[#A37B55]">
                   4+
                 </h3>
 
@@ -182,16 +184,16 @@ export default function Hero() {
 
           {/* RIGHT */}
 
-          <div className="relative flex justify-center lg:justify-end pt-10">
+         <div className="relative flex justify-center lg:justify-end">
 
             <img
               src="/images/logo.png"
               alt="Logo"
               className="
                 absolute
-                w-[320px]
+                w-[200px] md:w-[320px]
                 opacity-[0.08]
-                -left-16
+                -left-4 md:-left-16
                 top-12
                 pointer-events-none
                 select-none
@@ -201,8 +203,10 @@ export default function Hero() {
             <div
               className="
                 absolute
-                w-[500px]
-                h-[500px]
+                w-[300px]
+h-[300px]
+md:w-[500px]
+md:h-[500px]
                 rounded-full
                 bg-[#EADFD2]
                 blur-3xl
@@ -210,17 +214,19 @@ export default function Hero() {
               "
             />
 
-            <div
-              className="
-                relative
-                w-[420px]
-                h-[560px]
-                rounded-[40px]
-                overflow-hidden
-                bg-white
-                shadow-[0_25px_80px_rgba(0,0,0,0.12)]
-              "
-            >
+           <div
+  className="
+    relative
+    w-full
+    max-w-[420px]
+    h-[420px]
+    md:h-[560px]
+    rounded-[40px]
+    overflow-hidden
+    bg-white
+    shadow-[0_25px_80px_rgba(0,0,0,0.12)]
+  "
+>
         <img
   src={
     profile.hero_image ||
