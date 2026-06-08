@@ -61,36 +61,38 @@ export default function AdminLayout({
     );
   }
 
-  return (
-    <div className="min-h-screen bg-[#111111] flex">
+return (
+  <div className="min-h-screen bg-[#111111] flex flex-col md:flex-row">
 
-      <Sidebar />
+    <Sidebar />
 
-      <main className="flex-1 p-8">
+    <main className="flex-1 p-4 md:p-8 overflow-x-hidden">
 
-        <div className="flex justify-end mb-8">
+      <div className="flex justify-end mb-6 md:mb-8">
 
-          <button
-            onClick={logout}
-            className="
-              bg-red-600
-              hover:bg-red-700
-              text-white
-              px-5
-              py-3
-              rounded-xl
-              transition
-            "
-          >
-            Logout
-          </button>
+        <button
+          onClick={logout}
+          className="
+            bg-red-600
+            hover:bg-red-700
+            text-white
+            px-4
+            md:px-5
+            py-2
+            md:py-3
+            rounded-xl
+            transition
+          "
+        >
+          Logout
+        </button>
 
-        </div>
+      </div>
 
-        {children}
+      {children}
 
-      </main>
+    </main>
 
-    </div>
-  );
+  </div>
+);
 }
