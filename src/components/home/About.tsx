@@ -73,7 +73,7 @@ export default function About() {
 
               {[
                 {
-                  title: "10+",
+                  title: "15+",
                   desc: "Years of Professional Experience",
                 },
                 {
