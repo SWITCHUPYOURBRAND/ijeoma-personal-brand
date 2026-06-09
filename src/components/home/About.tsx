@@ -37,7 +37,7 @@ export default function About() {
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
 
-          <div className="grid lg:grid-cols-2 gap-20 items-center">
+         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
 
             <div>
 
@@ -68,8 +68,7 @@ export default function About() {
               </p>
 
             </div>
-
-            <div className="grid grid-cols-2 gap-5">
+<div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
 
               {[
                 {

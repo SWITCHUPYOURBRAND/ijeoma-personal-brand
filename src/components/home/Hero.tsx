@@ -47,7 +47,7 @@ export default function Hero() {
 
           {/* LEFT */}
 
-          <div className="max-w-2xl">
+          <div className="max-w-2xl order-2 lg:order-1">
 
             <p
               className="
@@ -184,7 +184,18 @@ max-w-xl
 
           {/* RIGHT */}
 
-         <div className="relative flex justify-center lg:justify-end">
+         <div
+  className="
+    relative
+    flex
+    justify-center
+    lg:justify-end
+    order-1
+    lg:order-2
+    mb-10
+    lg:mb-0
+  "
+>
 
             <img
               src="/images/logo.png"
