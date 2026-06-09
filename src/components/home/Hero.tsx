@@ -109,38 +109,44 @@ max-w-xl
 
             <div className="mt-8 flex flex-col sm:flex-row gap-4">
 
-              <button
-                className="
-                  bg-[#A37B55]
-                  text-white
-                  px-8
-                  py-4
-                  rounded-full
-                  transition-all
-                  duration-300
-                  hover:scale-105
-                  hover:bg-[#8A6548]
-                "
-              >
-                Explore Publications
-              </button>
+              <a
+  href="#publications"
+  className="
+    bg-[#A37B55]
+    text-white
+    px-8
+    py-4
+    rounded-full
+    transition-all
+    duration-300
+    hover:scale-105
+    hover:bg-[#8A6548]
+    inline-flex
+    justify-center
+  "
+>
+  Explore Publications
+</a>
 
-              <button
-                className="
-                  border
-                  border-[#A37B55]
-                  px-8
-                  py-4
-                  rounded-full
-                  text-[#A37B55]
-                  transition-all
-                  duration-300
-                  hover:bg-[#A37B55]
-                  hover:text-white
-                "
-              >
-                Get In Touch
-              </button>
+              <a
+  href="#contact"
+  className="
+    border
+    border-[#A37B55]
+    px-8
+    py-4
+    rounded-full
+    text-[#A37B55]
+    transition-all
+    duration-300
+    hover:bg-[#A37B55]
+    hover:text-white
+    inline-flex
+    justify-center
+  "
+>
+  Get In Touch
+</a>
 
             </div>
 
@@ -245,11 +251,11 @@ md:h-[500px]
   }
   alt="Ijeoma Thomas-Odia"
   className="
-    w-full
-    h-full
-    object-cover
-    object-top
-  "
+  w-full
+  h-full
+  object-cover
+  object-center
+"
 />
             </div>
 
