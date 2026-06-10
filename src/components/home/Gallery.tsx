@@ -64,7 +64,7 @@ export default function Gallery() {
 
           {/* FEATURED IMAGES */}
 
-          <div className="space-y-8 mb-24">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-24">
 
             {featuredImages.map((image, index) => (
               <div
@@ -72,6 +72,8 @@ export default function Gallery() {
                 className="
                   overflow-hidden
                   rounded-[32px]
+                  bg-[#F7F1EA]
+                  p-4
                   shadow-md
                 "
               >
@@ -81,7 +83,9 @@ export default function Gallery() {
                   className="
                     w-full
                     h-auto
-                    block
+                    max-h-[700px]
+                    mx-auto
+                    object-contain
                     transition
                     duration-700
                     hover:scale-[1.02]
@@ -131,6 +135,8 @@ export default function Gallery() {
                     className="
                       overflow-hidden
                       rounded-[32px]
+                      bg-[#F7F1EA]
+                      p-4
                       shadow-md
                     "
                   >
@@ -140,7 +146,9 @@ export default function Gallery() {
                       className="
                         w-full
                         h-auto
-                        block
+                        max-h-[700px]
+                        mx-auto
+                        object-contain
                         transition
                         duration-700
                         hover:scale-[1.02]
