@@ -35,9 +35,9 @@ export default function FeaturedWork() {
   return (
     <FadeIn>
       <section
-  id="publications"
-  className="bg-[#F7F1EA] py-32"
->
+        id="publications"
+        className="bg-[#F7F1EA] py-32"
+      >
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
 
           <p className="uppercase tracking-[0.3em] text-[#A37B55] text-sm mb-4">
@@ -50,12 +50,16 @@ export default function FeaturedWork() {
               text-4xl
               md:text-5xl
               text-[#222222]
-              mb-16
+              mb-6
             "
           >
             Selected publications and
             editorial contributions.
           </h2>
+
+          <p className="text-gray-500 mb-12">
+            Swipe or scroll horizontally to explore featured articles.
+          </p>
 
           {loading ? (
             <p className="text-gray-500">
@@ -66,8 +70,17 @@ export default function FeaturedWork() {
               No articles published yet.
             </p>
           ) : (
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-
+            <div
+              className="
+                flex
+                gap-8
+                overflow-x-auto
+                snap-x
+                snap-mandatory
+                pb-4
+                scrollbar-hide
+              "
+            >
               {articles.map((article) => (
                 <a
                   key={article.id}
@@ -75,6 +88,9 @@ export default function FeaturedWork() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="
+                    min-w-[320px]
+                    md:min-w-[450px]
+                    max-w-[450px]
                     bg-white
                     p-8
                     rounded-3xl
@@ -84,13 +100,15 @@ export default function FeaturedWork() {
                     hover:-translate-y-3
                     hover:shadow-2xl
                     block
+                    snap-center
+                    flex-shrink-0
                   "
                 >
                   <p className="text-[#A37B55] text-sm mb-4">
                     {article.publication}
                   </p>
 
-                  <h3 className="text-2xl font-semibold text-[#222222] mb-4">
+                  <h3 className="text-2xl font-semibold text-[#222222] mb-6 leading-snug">
                     {article.title}
                   </h3>
 
@@ -99,7 +117,6 @@ export default function FeaturedWork() {
                   </p>
                 </a>
               ))}
-
             </div>
           )}
 
