@@ -45,8 +45,6 @@ export default function Gallery() {
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
 
-          {/* SECTION HEADER */}
-
           <p className="uppercase tracking-[0.3em] text-[#A37B55] text-sm mb-4">
             Gallery
           </p>
@@ -64,40 +62,29 @@ export default function Gallery() {
             and media engagements.
           </h2>
 
-          {/* FEATURED GALLERY */}
+          {/* FEATURED IMAGES */}
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 auto-rows-[250px] mb-24">
+          <div className="space-y-8 mb-24">
 
-            <div className="lg:col-span-2 lg:row-span-2 overflow-hidden rounded-[32px]">
-              <img
-                src={featuredImages[0]}
-                alt=""
-                className="
-                  w-full
-                  h-full
-                  object-cover
-                  transition
-                  duration-700
-                  hover:scale-110
-                "
-              />
-            </div>
-
-            {featuredImages.slice(1).map((image, index) => (
+            {featuredImages.map((image, index) => (
               <div
                 key={index}
-                className="overflow-hidden rounded-[32px]"
+                className="
+                  overflow-hidden
+                  rounded-[32px]
+                  shadow-md
+                "
               >
                 <img
                   src={image}
                   alt=""
                   className="
                     w-full
-                    h-full
-                    object-cover
+                    h-auto
+                    block
                     transition
                     duration-700
-                    hover:scale-110
+                    hover:scale-[1.02]
                   "
                 />
               </div>
@@ -133,8 +120,7 @@ export default function Gallery() {
                 className="
                   grid
                   grid-cols-1
-                  sm:grid-cols-2
-                  lg:grid-cols-3
+                  md:grid-cols-2
                   gap-8
                 "
               >
@@ -145,11 +131,7 @@ export default function Gallery() {
                     className="
                       overflow-hidden
                       rounded-[32px]
-                      aspect-[4/5]
                       shadow-md
-                      hover:shadow-xl
-                      transition-all
-                      duration-500
                     "
                   >
                     <img
@@ -157,11 +139,11 @@ export default function Gallery() {
                       alt=""
                       className="
                         w-full
-                        h-full
-                        object-cover
+                        h-auto
+                        block
                         transition
                         duration-700
-                        hover:scale-105
+                        hover:scale-[1.02]
                       "
                     />
                   </div>
