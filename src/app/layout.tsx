@@ -19,6 +19,10 @@ export const metadata: Metadata = {
     template: "%s | Ijeoma Thomas-Odia",
   },
 
+  icons: {
+    icon: "/favicon.ico",
+  },
+
   description:
     "Award-winning journalist, editor, gender advocate and communications professional committed to stories that inform, inspire and create meaningful change.",
 
