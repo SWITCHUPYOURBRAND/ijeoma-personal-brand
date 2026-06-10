@@ -53,7 +53,7 @@ export default function FeaturedWork() {
   };
 
   return (
-    <>
+    <FadeIn>
       <section
         id="publications"
         className="bg-[#F7F1EA] py-32"
@@ -184,6 +184,6 @@ export default function FeaturedWork() {
 
         </div>
       </section>
-    </>
+    </FadeIn>
   );
 }
