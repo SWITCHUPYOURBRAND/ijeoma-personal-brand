@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import FadeIn from "@/components/ui/FadeIn";
 import { supabase } from "@/lib/supabase";
 
@@ -14,6 +14,8 @@ type Article = {
 export default function FeaturedWork() {
   const [articles, setArticles] = useState<Article[]>([]);
   const [loading, setLoading] = useState(true);
+
+  const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     fetchArticles();
@@ -31,6 +33,24 @@ export default function FeaturedWork() {
 
     setLoading(false);
   }
+
+  const scrollLeft = () => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollBy({
+        left: -400,
+        behavior: "smooth",
+      });
+    }
+  };
+
+  const scrollRight = () => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollBy({
+        left: 400,
+        behavior: "smooth",
+      });
+    }
+  };
 
   return (
     <FadeIn>
@@ -57,9 +77,49 @@ export default function FeaturedWork() {
             editorial contributions.
           </h2>
 
-          <p className="text-gray-500 mb-12">
-            Swipe or scroll horizontally to explore featured articles.
-          </p>
+          {!loading && articles.length > 0 && (
+            <div className="flex items-center justify-between mb-8">
+
+              <p className="text-gray-500">
+                {articles.length} Published Articles
+              </p>
+
+              <div className="flex gap-3">
+
+                <button
+                  onClick={scrollLeft}
+                  className="
+                    w-11
+                    h-11
+                    rounded-full
+                    bg-white
+                    shadow-md
+                    hover:shadow-lg
+                    transition
+                  "
+                >
+                  ←
+                </button>
+
+                <button
+                  onClick={scrollRight}
+                  className="
+                    w-11
+                    h-11
+                    rounded-full
+                    bg-white
+                    shadow-md
+                    hover:shadow-lg
+                    transition
+                  "
+                >
+                  →
+                </button>
+
+              </div>
+
+            </div>
+          )}
 
           {loading ? (
             <p className="text-gray-500">
@@ -71,9 +131,10 @@ export default function FeaturedWork() {
             </p>
           ) : (
             <div
+              ref={scrollRef}
               className="
                 flex
-                gap-8
+                gap-6
                 overflow-x-auto
                 snap-x
                 snap-mandatory
@@ -88,9 +149,10 @@ export default function FeaturedWork() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="
-                    min-w-[320px]
-                    md:min-w-[450px]
-                    max-w-[450px]
+                    w-[85vw]
+                    sm:w-[400px]
+                    md:w-[450px]
+                    lg:w-[500px]
                     bg-white
                     p-8
                     rounded-3xl
