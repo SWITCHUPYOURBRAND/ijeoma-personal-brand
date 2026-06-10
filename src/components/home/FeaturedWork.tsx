@@ -55,9 +55,9 @@ export default function FeaturedWork() {
   return (
     <FadeIn>
       <section
-        id="publications"
-        className="bg-[#F7F1EA] py-32"
-      >
+  id="publications"
+  className="bg-[#F7F1EA] py-32 scroll-mt-28"
+>
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
 
           <p className="uppercase tracking-[0.3em] text-[#A37B55] text-sm mb-4">

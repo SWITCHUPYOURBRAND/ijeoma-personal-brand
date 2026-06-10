@@ -74,9 +74,9 @@ export default function Contact() {
   return (
     <FadeIn>
       <section
-        id="contact"
-        className="bg-[#222222] py-32"
-      >
+  id="contact"
+  className="bg-[#222222] py-32 scroll-mt-28"
+>
         <div className="max-w-6xl mx-auto px-6 lg:px-10 text-center">
 
           <p className="uppercase tracking-[0.3em] text-[#C8A97E] text-sm mb-5">
